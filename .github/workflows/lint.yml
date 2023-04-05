@@ -1,6 +1,6 @@
 ---
 
-name: black-action
+name: lint
 
 on: [push, pull_request]
 
