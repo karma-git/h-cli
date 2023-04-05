@@ -1,0 +1,19 @@
+---
+
+yaml-files:
+  - '*.yaml'
+  - '*.yml'
+
+# https://yamllint.readthedocs.io/en/stable/rules.html
+extends: default
+
+# How to disable rules inline:
+#   https://yamllint.readthedocs.io/en/stable/disable_with_comments.html
+
+ignore: |
+  templates/
+  charts/
+
+rules:
+  line-length: disable
+  truthy: disable

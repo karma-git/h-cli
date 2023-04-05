@@ -1,0 +1,62 @@
+---
+
+name: release
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  IMAGE: docker.pkg.github.com/$(echo $GITHUB_REPOSITORY | tr '[A-Z]' '[a-z]')/h-cli
+
+jobs:
+
+  semantic-release:
+    name: semantic-release
+    runs-on: ubuntu-latest
+    concurrency: release
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Python Semantic Release
+        uses: relekang/python-semantic-release@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          repository_username: __token__
+          repository_password: ${{ secrets.REPOSITORY_PASSWORD }}
+
+  docker:
+    name: docker
+    runs-on: ubuntu-latest
+    needs: semantic-release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          ref: master
+          fetch-depth: 0
+      - name: Log in to GitHub Packages
+        run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.DOC_GH_TOKEN }}
+      - name: Pull image
+        run: |
+          docker pull ${{ env.IMAGE }}:latest || true
+      - name: Build image
+        run: |
+          latest_release=$(git describe --tags --abbrev=0)
+          echo $latest_release
+          docker build \
+            --cache-from ${{ env.IMAGE }}:latest \
+            --build-arg H_CLI_VERSION=$latest_release \
+            --tag ${{ env.IMAGE }}:latest \
+            --tag ${{ env.IMAGE }}:$latest_release \
+            --file ./Dockerfile \
+            "./"
+      - name: Push image
+        run: |
+          # pushes all tags
+          docker push ${{ env.IMAGE }}

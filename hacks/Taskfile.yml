@@ -1,0 +1,19 @@
+---
+# ref: https://taskfile.dev/
+
+version: "3"
+
+vars:
+  TF_PATH: terraform/__modules
+
+tasks:
+  lint:
+    description: python linters
+    cmds:
+      - black . --line-length 119
+      - flake8 . --max-line-length 119 --statistics  --extend-exclude venv,dist
+      - yamllint . -c .yamllint.yml
+
+  common:
+    description: extra things
+      - typer --install-completion
