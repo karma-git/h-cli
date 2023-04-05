@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.4 (2023-04-05)
+### Fix
+* **ci:** Pypi package version in docker args ([`1f3848e`](https://github.com/karma-git/h-cli/commit/1f3848ec7ffbedf4e8567e2d5b123640ab71b560))
+
 ## v0.1.3 (2023-04-05)
 ### Fix
 * Ci add jobs dependency ([`e08f24a`](https://github.com/karma-git/h-cli/commit/e08f24a2c2995800b2c15ef0157e99f488a7be3f))
