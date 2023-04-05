@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.6 (2023-04-05)
+### Fix
+* Docker push all tags ([`0b7dd36`](https://github.com/karma-git/h-cli/commit/0b7dd3629c22bd02700ad6e32680b46b2b17742f))
+
 ## v0.1.5 (2023-04-05)
 ### Fix
 * **ci:** Add wait for pypi in docker ([`4107394`](https://github.com/karma-git/h-cli/commit/41073949ea947615d852433261e6148d1257ebc1))
