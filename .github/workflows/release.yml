@@ -63,4 +63,4 @@ jobs:
       - name: Push image
         run: |
           # pushes all tags
-          docker push ${{ env.IMAGE }}
+          docker push ${{ env.IMAGE }} --all-tags
