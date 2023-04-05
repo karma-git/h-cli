@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.1.5 (2023-04-05)
+### Fix
+* **ci:** Add wait for pypi in docker ([`4107394`](https://github.com/karma-git/h-cli/commit/41073949ea947615d852433261e6148d1257ebc1))
+
 ## v0.1.4 (2023-04-05)
 ### Fix
 * **ci:** Pypi package version in docker args ([`1f3848e`](https://github.com/karma-git/h-cli/commit/1f3848ec7ffbedf4e8567e2d5b123640ab71b560))
