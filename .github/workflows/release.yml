@@ -50,6 +50,9 @@ jobs:
         run: |
           latest_release=$(git describe --tags --abbrev=0 | grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' | cut -c 2-)
           echo $latest_release
+          # wait 2 minutes until package will be available
+          sleep 120
+
           docker build \
             --cache-from ${{ env.IMAGE }}:latest \
             --build-arg H_CLI_VERSION=$latest_release \
