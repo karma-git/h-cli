@@ -43,13 +43,12 @@ jobs:
         run: echo ${GITHUB_TOKEN} | docker login -u ${GITHUB_ACTOR} --password-stdin docker.pkg.github.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # GITHUB_TOKEN: ${{ secrets.DOC_GH_TOKEN }}
       - name: Pull image
         run: |
           docker pull ${{ env.IMAGE }}:latest || true
       - name: Build image
         run: |
-          latest_release=$(git describe --tags --abbrev=0)
+          latest_release=$(git describe --tags --abbrev=0 | grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' | cut -c 2-)
           echo $latest_release
           docker build \
             --cache-from ${{ env.IMAGE }}:latest \
