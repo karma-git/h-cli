@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.1 (2023-07-05)
+
+### Fix
+
+* Delete code dublicate ([`1ef3b16`](https://github.com/karma-git/h-cli/commit/1ef3b16171a871c00685a37d7a9ed430301b1520))
+
 ## v0.2.0 (2023-07-05)
 
 ### Feature
