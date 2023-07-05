@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.2.0 (2023-07-05)
+
+### Feature
+
+* **converter:** Add pdf merging ([`5a1be66`](https://github.com/karma-git/h-cli/commit/5a1be66ad460f8ac59bef98a6dbf9fc57ee6ba2d))
+
 ## v0.1.6 (2023-04-05)
 ### Fix
 * Docker push all tags ([`0b7dd36`](https://github.com/karma-git/h-cli/commit/0b7dd3629c22bd02700ad6e32680b46b2b17742f))
