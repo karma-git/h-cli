@@ -14,6 +14,7 @@ python = ">=3.10,<3.12"
 pillow = "^9.5.0"
 difpy = "^3.0.10"
 typer = {extras = ["all"], version = "^0.7.0"}
+pymupdf = "^1.22.5"
 
 [tool.poetry.group.dev.dependencies]
 typer-cli = "^0.0.13"
