@@ -18,4 +18,10 @@ tasks:
     description: extra things
     cmds:
       - typer --install-completion
-      # TODO: https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli
+
+  docs:
+    cmds:
+      # ref: https://typer.tiangolo.com/typer-cli/#generate-docs-with-typer-cli
+      # poetry shell # activate venv
+      # poetry install # install python packages, especially typer-cli
+      - typer horbach_cli.main utils docs --output horbach_cli/README.md --name h-cli

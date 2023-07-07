@@ -9,6 +9,7 @@ $ h-cli [OPTIONS] COMMAND [ARGS]...
 **Options**:
 
 * `-v, --verbose TEXT`: :mag: `LOG_LEVEL` one of: DEBUG, INFO, WARNING, ERROR, CRITICAL  [default: INFO]
+* `--version`
 * `--install-completion`: Install completion for the current shell.
 * `--show-completion`: Show completion for the current shell, to copy it or customize the installation.
 * `--help`: Show this message and exit.
@@ -36,6 +37,7 @@ $ h-cli converter [OPTIONS] COMMAND [ARGS]...
 
 * `heic-to-jpg`: :camera: images from :green_apple: heic to...
 * `img-to-pdf`: :camera: images into :memo: pdf
+* `pdf-merge`: :camera: merge pdfs
 
 ### `h-cli converter heic-to-jpg`
 
@@ -69,6 +71,24 @@ $ h-cli converter img-to-pdf [OPTIONS] IMAGES_FOLDER [PDF_FILE]
 
 * `IMAGES_FOLDER`: Path to folder with images  [required]
 * `[PDF_FILE]`: Result file name  [default: result.pdf]
+
+**Options**:
+
+* `--help`: Show this message and exit.
+
+### `h-cli converter pdf-merge`
+
+:camera: merge pdfs
+
+**Usage**:
+
+```console
+$ h-cli converter pdf-merge [OPTIONS] PDFS_FOLDER
+```
+
+**Arguments**:
+
+* `PDFS_FOLDER`: Path to folder with pdfs  [required]
 
 **Options**:
 
