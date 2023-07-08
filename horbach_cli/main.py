@@ -7,7 +7,7 @@ import typer
 
 from horbach_cli import __version__
 from horbach_cli.libs.common import log_lvl_callback, LOG_LVL
-from horbach_cli import converter, deduplicator
+from horbach_cli import converter, deduplicator, warp
 
 app = typer.Typer(rich_markup_mode="markdown")
 
@@ -50,6 +50,14 @@ app.add_typer(
     help=":two_men_holding_hands: dedublicates something.",
     rich_help_panel="Hacks",
 )
+
+app.add_typer(
+    warp.app,
+    name="warp",
+    help=":computer: warp.dev workflows replacement",
+    rich_help_panel="Hacks",
+)
+
 
 if __name__ == "__main__":
     app(prog_name="h-cli")
