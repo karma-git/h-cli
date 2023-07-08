@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "horbach-cli"
-version = "0.2.1"
+version = "0.3.0"
 description = ""
 authors = ["Andrew Horbach <andrewhorbach@gmail.com>"]
 readme = "README.md"

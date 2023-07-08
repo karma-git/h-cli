@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.3.0 (2023-07-08)
+
+### Feature
+
+* Add warp tool ([`359e7b4`](https://github.com/karma-git/h-cli/commit/359e7b44efb55fe28568517a6fde3bcf2139eb4e))
+
 ## v0.2.1 (2023-07-05)
 
 ### Fix
